@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 10-Abr-2017 às 20:55
+-- Generation Time: 10-Abr-2017 às 21:24
 -- Versão do servidor: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -28,31 +28,31 @@ DELIMITER $$
 --
 CREATE DEFINER=`root`@`localhost` FUNCTION `obter_nome_empresa` (`id` INTEGER) RETURNS VARCHAR(255) CHARSET latin1 BEGIN 
 	DECLARE retorno varchar(255);
-	SELECT empresa_razao_social into retorno from opiniometro_ci.empresa where empresa_id = id;
+	SELECT empresa_razao_social into retorno from empresa where empresa_id = id;
     RETURN retorno;
 END$$
 
 CREATE DEFINER=`root`@`localhost` FUNCTION `obter_nome_permissao` (`id` INTEGER) RETURNS VARCHAR(255) CHARSET latin1 BEGIN 
 	DECLARE retorno varchar(255);
-	SELECT permissao_descricao into retorno from opiniometro_ci.permissao where permissao_id = id;
+	SELECT permissao_descricao into retorno from permissao where permissao_id = id;
     RETURN retorno;
 END$$
 
 CREATE DEFINER=`root`@`localhost` FUNCTION `obter_nome_setor` (`id` INTEGER) RETURNS VARCHAR(255) CHARSET latin1 BEGIN 
 	DECLARE retorno varchar(255);
-	SELECT setor_descricao into retorno from opiniometro_ci.setor where setor_id = id;
+	SELECT setor_descricao into retorno from setor where setor_id = id;
     RETURN retorno;
 END$$
 
 CREATE DEFINER=`root`@`localhost` FUNCTION `obter_nome_usuario` (`id` INTEGER) RETURNS VARCHAR(255) CHARSET latin1 BEGIN 
 	DECLARE retorno varchar(255);
-	SELECT usuario_nome into retorno from opiniometro_ci.usuario where usuario_id = id;
+	SELECT usuario_nome into retorno from usuario where usuario_id = id;
     RETURN retorno;
 END$$
 
 CREATE DEFINER=`root`@`localhost` FUNCTION `obter_qtd_opiniao_empresa` (`tipo` INTEGER, `data_opiniao` DATE, `empresa` INTEGER) RETURNS INT(11) BEGIN 
 		DECLARE retorno INTEGER;
-		select count(*) into retorno from opiniometro_ci.opiniao
+		select count(*) into retorno from opiniao
 		where opiniao_tipo = tipo		
 		and opiniao_data = data_opiniao
 		and opiniao_empresa = empresa;
@@ -61,7 +61,7 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` FUNCTION `obter_qtd_opiniao_usuario` (`tipo` INT, `usuario` INT, `data_opiniao` DATE, `empresa` INT) RETURNS INT(11) BEGIN 
 		DECLARE retorno int;
-        select count(*) into retorno from opiniometro_ci.opiniao
+        select count(*) into retorno from opiniao
 		where opiniao_tipo = tipo
 		and opiniao_usuario = usuario
 		and opiniao_data = data_opiniao
