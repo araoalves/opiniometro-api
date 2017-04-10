@@ -1,0 +1,22 @@
+/*Cursos em Destaque */
+
+.img-destaque {
+    padding-bottom: 10px;
+}
+.cursos-destaque {
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+.cursos-destaque img:hover {
+    -webkit-transform: scale(1.1);
+    -webkit-transition: all .2s ease-in;
+    z-index: 1000;
+}
+.border-marinho {
+    max-width: 100%;
+    height: auto;
+    background-color: #515a7f;
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+}

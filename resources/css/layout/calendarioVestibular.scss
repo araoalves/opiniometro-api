@@ -1,0 +1,25 @@
+/* Calendário do Vestibular */
+
+.border-calendario {
+    max-width: 100%;
+    height: auto;
+    background-color: #ecab69;
+    text-align: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    margin-top: 65px;
+    color: white;
+}
+.calendario-vestibular {
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 2px 2px solid black;
+    padding: 12px;
+    margin: 10px;
+    background-color: white;
+    max-height: 420px;
+}
+.titulo-vestibular {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}

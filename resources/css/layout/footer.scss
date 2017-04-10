@@ -1,0 +1,61 @@
+/* Footer  */
+
+#footser-end {
+    text-align: left;
+    background-color: #26333C;
+    color: $cor-branca;
+    bottom: 0;
+}
+.espaco-footer {
+    margin-top: 80px;
+}
+.footer-img {
+    left: 130px;
+    position: relative;
+}
+.font-footer {
+    font-size: 1.2em;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: $cor-branca;
+}
+.font-footer-espaco {
+    text-decoration: underline;
+    text-transform: none;
+    font-size: .9em;
+    margin-top: -15px;
+    position: relative;
+}
+.icones a {
+    color: $cor-branca;
+}
+.icones > a > i:hover {
+    color: $cor-padrao;
+    transition: 1s;
+}
+.font-footer-espaco a {
+    color: $cor-branca;
+}
+.redes-sociais > a > i {
+    color: $cor-branca;
+    padding-top: 20px;
+}
+.redes-sociais > a > i:hover {
+    color: $cor-padrao;
+    transition: 1s;
+}
+/* Fotos Campi */
+
+.texto-amarelo {
+    color: #ccc031;
+}
+.fotos-campi {
+    padding-top: 40px;
+}
+.espaco-campi {
+    padding-bottom: 20px;
+}
+.legenda-campi {
+    font-size: 10px;
+    font-weight: bold;
+}

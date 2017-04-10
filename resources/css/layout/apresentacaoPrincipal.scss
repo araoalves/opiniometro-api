@@ -1,0 +1,52 @@
+/* Apresentação Principal */
+
+.qualidade-principal {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #807b7b;
+}
+.conteudo-inicial {
+    padding-top: 200px;
+    padding-top: 50px;
+    @include borda-arredondada;
+    height: 20em;
+    max-height: 220px;
+    min-height: 220px;
+}
+.conteudo-inicial > h2 {
+    font-weight: bold;
+    font-size: 25px;
+}
+.conteudo-inicial > p {
+    line-height: 15px;
+    font-size: 1.2em;
+}
+.color-1 {
+    color: #3C1E5A;
+}
+.color-2 {
+    color: #054D74;
+}
+.color-3 {
+    color: #F6891B;
+}
+.color-4 {
+    color: #18BC9C;
+}
+.box-saiba {
+    border: 1px solid #aaa7a7;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    top: 5px;
+    color: #888282;
+    font-size: 18px;
+}
+.box-saiba:hover {
+    border: 1px solid $cor-padrao;
+    background-color: $cor-padrao;
+    color: white;
+    text-decoration: none;
+    transition: 0.8s;
+}

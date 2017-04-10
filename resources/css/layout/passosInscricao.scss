@@ -1,0 +1,43 @@
+/* Facilidade de Inscrição */
+
+.background-passos {
+    background-color: #18BC9C;
+    color: white;
+    text-align: center;
+}
+.facilidade-inscricao {
+    padding-top: 20px;
+    padding-bottom: 60px;
+}
+.facilidade-inscricao-passos {
+    padding-top: 40px;
+}
+.border-amarelo {
+    max-width: 100%;
+    height: 10px;
+    background-color: #ccc031;
+}
+.passo-processo {
+    font-size: 3em;
+    font-weight: 900;
+}
+.processo-inscricao {
+    padding-bottom: 20px;
+}
+.btn-passo {
+    background-color: white;
+    color: #18BC9C;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    top: 40px;
+    position: relative;
+    font-weight: 700;
+    border-radius: 5px;
+}
+.btn-passo:hover {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}

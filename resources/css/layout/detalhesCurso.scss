@@ -1,0 +1,80 @@
+
+/* Detalhes cursos e valores */
+
+.btn-curso {
+    border: 1px solid white;
+    color: #7b5c9a;
+    font-weight: bold;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+.btn-curso:hover {
+    color: white;
+    transition: 0.8s;
+    background-color: #7b5c9a;
+}
+
+.perfil-curso {
+    border: 2px solid #7b5c9a;
+    padding: 20px;
+    text-align: justify;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.perfil-detalhes {
+    
+}
+
+.perfil-curso > p {
+    text-indent: 50px;
+    margin-top: 20px;
+}
+.perfil-midias {
+    border: 2px solid #7b5c9a;
+    padding: 20px;
+    text-align: justify;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.titulo-curso {
+   font-weight: 600;
+    color: #7b5c9a;
+    font-size: 1.6em;
+}
+.detalhe-curso {
+    margin-bottom: 20px;
+}
+
+.btn-detalhe {
+    background-color: #18BC9C;
+     color: white;
+    font-weight: bold;
+    padding: 12px;
+   
+    float: left;
+}
+
+.btn-detalhe:hover {
+    border: 1px solid #18BC9C;
+    background-color: transparent;
+     color: #18BC9C;
+    font-weight: bold;
+    padding: 12px;
+   
+    float: left;
+}
+
+.div-grade {
+    margin-top: 11px;
+}
+
+
+/* teste do validador */
+#divErro { position: absolute; top:0px; margin:auto; width:500px; background:#FFF8D9; border:#900 1px solid; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; display:none; z-index:10000; padding:10px; }
+
+
+
+

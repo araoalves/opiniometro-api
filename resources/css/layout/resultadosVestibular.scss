@@ -1,0 +1,52 @@
+/* Resultados */
+.border-resultados {
+    background-color: #7b5c9a;
+    width: 100%;
+    text-align: center;
+    color: white;
+    min-height: 300px;
+}
+   
+    
+
+    .box-vestibular {
+        border: 2px solid #7b5c9a;
+        color: #7b5c9a;
+        position: relative;
+        box-shadow: 0px 1px 1px 1px $cor-branca;
+        @include borda-arredondada;
+        text-align: center;
+        min-height: 120px;
+        margin-bottom: 20px;
+    }
+
+.box-vestibular > span {
+    position: relative;
+    bottom: -13px;
+    
+}
+.box-vestibular > h4 {
+    margin-bottom: 20px;
+}
+   
+   
+    .btn-result {
+       width: 100%;
+       text-align: center;
+        color: #7b5c9a;
+        text-transform: uppercase;
+        border: solid 2px #7b5c9a;
+        @include borda-arredondada;
+        position: relative;
+        padding: 5px;
+        margin-top: 220px;
+}
+   
+    .btn-result:hover {
+        background-color: #7b5c9a;
+border: solid 2px #7b5c9a;
+        transition: 1s;
+        border: #159238;
+        color: $cor-branca;
+        text-decoration: none;
+    }

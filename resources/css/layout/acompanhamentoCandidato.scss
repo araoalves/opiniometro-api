@@ -1,0 +1,121 @@
+/*Acompanhamento */
+
+.border-acompanhamento {
+    background-color: #5cc5b1;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+.espacamento-acompanhamento {
+    margin-top: 66px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.espacamento-acompanhamento2 {
+    margin-top: 50px;
+}
+/* Tela administrativa */
+
+.background-adm {
+    background: $cor-branca;
+    box-shadow: 2px 2px 2px 2px #ddd;
+    padding-top: 20px;
+    padding-bottom: 60px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: auto;
+    text-align: center;
+}
+.adm-opcoes {
+    padding: 13px;
+    margin-bottom: 15px;
+    height: 125px;
+    text-align: center;
+}
+.posicao-sair {
+    width: 200px;
+    float: right;
+}
+.adm-opcoes > a {
+    color: $cor-padrao;
+}
+.adm-opcoes > a:hover {
+    color: #006535;
+    text-decoration: none;
+}
+
+/* Tela imprimir cartão */
+
+.imprimir-cartao {
+    border: 1px solid #ddd;
+    background-color: #185f9c;
+    margin-top: 30px;
+    border-radius: 10px;
+     color: white;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+/* Tela Agendar Matricula */
+
+.formMat {
+padding: 15px;
+margin-top: 20px;
+margin-bottom: 20px;
+    color: #807979;
+        background-color: white;
+margin-left: 10px;
+    margin-right: 10px;
+}
+
+.documentos-necessarios {
+    text-align: justify;
+    background-color: white;
+    padding: 15px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+/* Tela mudar curso */
+.border-mudar-curso {
+    border: 1px solid #185f9c;
+    margin-top: 20px;
+    background-color: #185f9c;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.titulo-mudar {
+    font-weight: bold;
+    
+}
+
+.background-mudar a {
+    background-color: white;
+    border-radius: 5px;
+    width: 200px;
+    font-weight: bold;
+    border: 1px solid white;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.background-mudar a:hover {
+    background-color: transparent;
+    border-radius: 5px;
+    width: 200px;
+    font-weight: bold;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+}
+
+.voltar-mudar {
+    left: 12px;
+}
+

@@ -1,0 +1,43 @@
+/* === Importando fonte === */
+
+/*@import url('https://fonts.googleapis.com/css?family=PT+Serif'); */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+
+
+// Importando os arquivos de variaveis e mixins
+
+@import 'helpers/variaveis';
+@import 'helpers/mixins';
+
+// Importando os arquivos do meu SASS da sessões principais do site
+@import 'layout/header';
+@import 'layout/bannerPrincipal';
+@import 'layout/apresentacaoPrincipal';
+@import 'layout/cursosDestaque';
+@import 'layout/passosInscricao';
+@import 'layout/footer';
+
+// Importanto os arquivos do meu SASS de cada página especifica
+@import 'layout/cursosValores';
+@import 'layout/acompanhamentoCandidato';
+@import 'layout/confirmacaoInscricao';
+@import 'layout/detalhesCurso';
+@import 'layout/editalManual';
+@import 'layout/iniciarInscricao';
+@import 'layout/resultadosVestibular';
+@import 'layout/escolherCurso';
+@import 'layout/calendarioVestibular';
+@import 'layout/financiamentoVestibular';
+
+
+
+
+   
+
+
+
+
+
+ 

@@ -1,0 +1,111 @@
+/* Menu Principal = */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+    background: $background-padrao;
+}
+.navbar-brand-logo {
+    max-height: 60px;
+    padding-bottom: 20px;
+}
+.navbar-default .navbar-nav .inscreva-menu > a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.navbar-default .navbar-nav .inscreva-menu > a:hover {
+    color: #3C1E5A;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: 0.5s;
+}
+.navbar-default .navbar-nav .inscreva-menu1 > a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.navbar-default .navbar-nav .inscreva-menu1 > a:hover {
+    color: $cor-padrao;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: 0.5s;
+}
+.inscreva-se {
+    border: 1px solid #3C1E5A;
+    background-color: #3C1E5A;
+    border-top-left-radius: 0;
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.inscreva-se:hover {
+    background-color: transparent;
+    border: 1px solid #3C1E5A;
+    color: #3C1E5A;
+}
+.inscreva-se1 {
+    border: 1px solid $cor-padrao;
+    background-color: $cor-padrao;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 1em;
+}
+.navbar-default .navbar-nav > li > a {
+    font-size: 1em;
+    text-transform: uppercase;
+    margin-left: -1px;
+    margin-right: 0px;
+}
+.border-menu a:hover {
+    color: #185f9c;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: $cor-padrao;
+}
+.navbar-nav > li > a {
+    margin: 7px 3px 5px 0px;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: $cor-branca;
+}
+.navbar-default .navbar-toggle {
+    border: 2px solid $cor-padrao;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: $cor-padrao;
+}
+/*Menu DropDown */
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    list-style: none;
+    background-color: $cor-branca;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    @include borda-arredondada;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+.dropdown-menu > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    line-height: 1.42857143;
+    color: #585757;
+    white-space: nowrap;
+    text-transform: uppercase;
+}

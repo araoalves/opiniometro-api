@@ -1,0 +1,92 @@
+/* Passos do processo de inscrição */
+
+.passo-ativo {
+    background-color: #18BC9C;
+    border-top-left-radius: 0;
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 2em;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+}
+.passo-desativado {
+    padding: 5px;
+    color: #a58cab;
+    font-weight: bold;
+}
+.escolher-curso {
+    background-color: white;
+    padding: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+.escolher-turno {
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+    margin-top: 30px;
+}
+.titulo-passo {
+    font-size: 2em;
+    color: #807979;
+}
+/* Box do turno e valor do curso */
+
+.titulo-valor {
+    border: 2px solid #7b5c9a;
+    margin-bottom: 5px;
+    text-align: center;
+    background-color: #7b5c9a;
+    color: white;
+    margin-top: 20px;
+}
+.valor-curso {
+    border: 2px solid #7b5c9a;
+    padding: 10px;
+    min-height: 250px;
+}
+.turno-valor {
+    color: #7b5c9a;
+    font-size: 1.1em;
+}
+.legenda-valor {
+    
+    font-size: 1em;
+    color: black;
+}
+.continuar-processo {
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+/* Tela informar dados pessoais */
+
+.espaco-cpf {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: white;
+}
+.border-dados-pessoais {
+    background-color: white;
+    padding: 30px;
+}
+/* Tela Confirmar Dados */
+
+.border-confirmacao {
+    background-color: white;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.confirmar-dados {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    color: #807979;
+}
+.confirmar-voltar {
+    margin-bottom: 50px;
+    float: left;
+}

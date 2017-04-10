@@ -1,0 +1,127 @@
+[33mcommit 5a36391f5eec3ebdc6aae748e4f085081e487240[m
+Author: Bruno Lima <3766@CEUMA.EDU.BR>
+Date:   Thu Feb 23 16:53:48 2017 -0300
+
+    Adição de novas paginas da area administrativa do candidato
+
+[33mcommit 36480951e6d6b5d9e6fb5f2b915373c40a70a83f[m
+Author: Thiago Augusto Lopes Silva <4583@CEUMA.EDU.BR>
+Date:   Thu Feb 23 16:47:30 2017 -0300
+
+    Inserindo novas atualizações de código
+
+[33mcommit 54f63df3c9b30cbbf66021242340853bf11e6781[m
+Author: Thiago Augusto Lopes Silva <4583@CEUMA.EDU.BR>
+Date:   Thu Feb 23 14:27:34 2017 -0300
+
+    Subindo últimas alterações
+
+[33mcommit 610bb5d24a1634d2814d2d2dd293cf1aa7cc8de4[m
+Author: Thiago Augusto Lopes Silva <4583@CEUMA.EDU.BR>
+Date:   Wed Feb 22 16:53:14 2017 -0300
+
+    Subindo modificações em alguns controllers/layout
+
+[33mcommit 097fd744a7c7df6210dec0614afd9c5c361ff286[m
+Author: Thiago Augusto Lopes Silva <4583@CEUMA.EDU.BR>
+Date:   Wed Feb 22 10:48:25 2017 -0300
+
+    Atualização e incremento de validações para o processo de inscrição.
+
+[33mcommit 605026a93a4df8e30caf3a9a5b9c2697730f51a6[m
+Author: Thiago Lopes <thiago.lopes@ceuma.br>
+Date:   Wed Feb 22 08:37:25 2017 -0300
+
+    Update .gitignore
+
+[33mcommit 07b46d65a31e3cf8c4a02b7f86b299824c9b9439[m
+Merge: 63e96ec 8f3d4da
+Author: Thiago Augusto Lopes Silva <4583@CEUMA.EDU.BR>
+Date:   Tue Feb 21 17:02:54 2017 -0300
+
+    Merge branch 'master' of nero.ceuma.edu.br:devsceuma/vestibular
+
+[33mcommit 8f3d4dacae93b2c2ee76ff2ab2328a5f9ebd4f72[m
+Merge: f83cffe 095eaaa
+Author: Bruno Lima <3766@CEUMA.EDU.BR>
+Date:   Tue Feb 21 17:03:23 2017 -0300
+
+    Merge branch 'master' of nero.ceuma.edu.br:devsceuma/vestibular
+
+[33mcommit 095eaaaf7b7b5c99878788bee2cc490f632c4f8c[m
+Author: Thiago Lopes <thiago.lopes@ceuma.br>
+Date:   Tue Feb 21 16:58:41 2017 -0300
+
+    Retirando alguns arquivos que devem ser ignorados
+
+[33mcommit 63e96ec12e7d55cd534f864e9ca709b3e5649bf0[m
+Author: Thiago Augusto Lopes Silva <4583@CEUMA.EDU.BR>
+Date:   Tue Feb 21 16:56:12 2017 -0300
+
+    Update dos arquivos front e back da inscrição do vestibular
+
+[33mcommit f83cffefbfc0c1018b1fc3d5aa32c2ee2ee5b2d3[m
+Author: Bruno Lima <3766@CEUMA.EDU.BR>
+Date:   Tue Feb 21 16:50:26 2017 -0300
+
+    Adicionando novas paginas - Edital e Manual e outros
+
+[33mcommit cf83526c9724061802491c02080bea2496c4e2a9[m
+Author: Thiago Lopes <thiago.lopes@ceuma.br>
+Date:   Tue Feb 21 09:57:57 2017 -0300
+
+    Update gitignore para não aceitar arquivos htaccess, visto que o mesmo altera o caminho da url, o que pode atrapalhar na hora de clonar o projeto
+
+[33mcommit 6c615df0cf623ae24c0035d44a2f4ad9fffa5ccb[m
+Author: Thiago Lopes <thiago.lopes@ceuma.br>
+Date:   Tue Feb 21 09:50:47 2017 -0300
+
+    Update gitignore para que não seja preciso mudar o base_url toda vez que se clonar o projeto do git
+
+[33mcommit 7b235373c1f775de59b5643df8119804552a33b3[m
+Author: Thiago Augusto Lopes Silva <4583@CEUMA.EDU.BR>
+Date:   Tue Feb 21 09:29:51 2017 -0300
+
+    Subindo novo projeto do vestibular CEUMA
+
+[33mcommit 8b718f5e44dea828e293d78724d654cc32eb3025[m
+Author: Thiago Augusto Lopes Silva <4583@CEUMA.EDU.BR>
+Date:   Tue Feb 21 09:25:03 2017 -0300
+
+    Limpando workspace do vestibular, pois o projeto mudou de forma brusca
+
+[33mcommit ccc8f326e38fa9d573b8ee5e3908c9f2527903a3[m
+Author: Thiago Augusto Lopes Silva <4583@CEUMA.EDU.BR>
+Date:   Mon Jan 9 14:22:09 2017 -0300
+
+    Subindo novo projeto do vestibular
+
+[33mcommit 5d6000ee353f7cab5f27450dc902a454a4766bac[m
+Author: Thiago Augusto Lopes Silva <4583@CEUMA.EDU.BR>
+Date:   Mon Jan 9 14:17:38 2017 -0300
+
+    Limpando o master
+
+[33mcommit 72b71e51a1c24043ccb2cad5997af3538f4098bb[m
+Author: Arão Alves de Farias <arao.alves@ceuma.br>
+Date:   Fri Sep 23 08:00:12 2016 -0300
+
+    Update README.md
+
+[33mcommit ad71accf566571bec3128f95af26a7a659a696d7[m
+Author: Thiago Augusto Lopes Silva <4583@CEUMA.EDU.BR>
+Date:   Thu Sep 22 10:34:18 2016 -0300
+
+    Subindo projeto Vestibular (Rede Card) / FAMAZ
+
+[33mcommit 5c75b1611d091e187cbb0f85daca80790a5c3088[m
+Author: Arão Alves de Farias <arao.alves@ceuma.br>
+Date:   Thu Sep 22 10:23:22 2016 -0300
+
+    Update README.md
+
+[33mcommit 1a0cc8ec4fda6923e1ea4addad27e5a98c6779d6[m
+Author: Michel Cordeiro <michel.cordeiro@ceuma.br>
+Date:   Thu Sep 22 08:35:44 2016 -0300
+
+    Add new file

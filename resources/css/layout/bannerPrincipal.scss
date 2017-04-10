@@ -1,0 +1,175 @@
+/*  Banner Principal */
+
+.titulo-principal {
+    margin-top: -480px;
+    text-align: center;
+    color: white;
+}
+.titulo-principal > h2 {
+    text-shadow: black 0.1em 0.1em 0.2em;
+    font-weight: 800;
+    font-size: 4em;
+}
+.titulo-principal > h3 {
+    text-shadow: black 0.1em 0.1em 0.2em;
+    font-weight: 800;
+}
+.inscrevase-principal {
+    border: 1px solid #3C1E5A;
+    width: 100%;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    font-weight: bold;
+    background-color: #3C1E5A;
+    margin-top: 30px;
+    border-radius: 5px;
+    font-size: 1.5em;
+    position: relative;
+    top: 20px;
+}
+.inscrevase-principal:hover {
+    border: 1px solid #3C1E5A;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center !important;
+    color: #3C1E5A;
+    font-weight: bold;
+    background-color: transparent;
+    text-decoration: none;
+    border-radius: 5px;
+}
+/* Propagandas */
+
+
+.caixa-propaganda {
+    width: 100%;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: rgba(1, 1, 1, 0.5);
+    height: 120px;
+    text-align: left;
+    font-size: 1em;
+}
+/* Bordas da propaganda */
+
+.border-1 {
+    width: 100%;
+    border-top-width: 3px;
+    border-top-style: solid;
+    border-top-color: #F6891B;
+}
+.border-2 {
+    width: 100%;
+    border-top-width: 3px;
+    border-top-style: solid;
+    border-top-color: #18BC9C;
+}
+.border-3 {
+    width: 100%;
+    border-top-width: 3px;
+    border-top-style: solid;
+    border-top-color: #185f9c;
+}
+.border-4 {
+    width: 100%;
+    border-top-width: 3px;
+    border-top-style: solid;
+    border-top-color: #3C1E5A;
+}
+
+/* Propaganda 01 */
+
+.background-propaganda {
+    background-color: #656060;
+    height: auto;
+    width: 100%;
+}
+.texto-propaganda {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 5px;
+    color: white;
+    font-size: 2em;
+}
+
+.border-verde {
+    max-width: 100%;
+    height: 6px;
+    background-color: #18BC9C;
+}
+
+
+/* Media do Banner Principal */
+
+@media (max-width: 767px) {
+    #campiFooter {
+        display: none;
+    }
+    #infoFooter {
+        display: none;
+    }
+    #bannerPrincipal {
+        display: none;
+    }
+    #infoPrincipal {
+        margin-top: 50px;
+    }
+    
+   
+    
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    #infoPrincipal {
+        margin-top: -280px;
+    }
+    #infoPropaganda {
+        margin-top: 10px;
+    }
+     #footer-logo {
+        display: none;
+    }
+    .img-campi {
+        display: none;
+    }
+    #conteudoInicial {
+        max-height: 270px;
+    }
+     #infoFooter {
+        margin-top: -100px;
+    }
+    
+    #propagandas {
+        margin-top:20px;
+    }
+}
+@media (min-width: 1021px) and (max-width: 1199px) {
+    #infoPrincipal {
+        margin-top: -300px;
+    }
+    #footer-logo {
+        display: none;
+    }
+   
+    .img-campi {
+        display: none;
+    }
+    #conteudoInicial {
+        max-height: 240px;
+    }
+    
+     #propagandas {
+        margin-top:330px;
+    }
+    
+    #infoFooter {
+        margin-top: -100px;
+    }
+   
+}
