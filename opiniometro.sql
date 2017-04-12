@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 10-Abr-2017 às 21:24
+-- Generation Time: 12-Abr-2017 às 14:19
 -- Versão do servidor: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -134,6 +134,40 @@ INSERT INTO `opiniao` (`opiniao_id`, `opiniao_data`, `opiniao_usuario`, `opiniao
 -- --------------------------------------------------------
 
 --
+-- Stand-in structure for view `opinioes_empresa`
+--
+CREATE TABLE `opinioes_empresa` (
+`opiniao_data` date
+,`opiniao_empresa` int(11)
+,`empresa_descricao` varchar(255)
+,`opiniao_otimo` int(11)
+,`opiniao_bom` int(11)
+,`opiniao_regular` int(11)
+,`opiniao_ruim` int(11)
+,`opiniao_pessimo` int(11)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `opinioes_usuario`
+--
+CREATE TABLE `opinioes_usuario` (
+`opiniao_data` date
+,`opiniao_usuario` int(11)
+,`usuario_descricao` varchar(255)
+,`opiniao_empresa` int(11)
+,`empresa_descricao` varchar(255)
+,`opiniao_otimo` int(11)
+,`opiniao_bom` int(11)
+,`opiniao_regular` int(11)
+,`opiniao_ruim` int(11)
+,`opiniao_pessimo` int(11)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `permissao`
 --
 
@@ -170,8 +204,7 @@ CREATE TABLE `setor` (
 INSERT INTO `setor` (`setor_id`, `setor_descricao`, `setor_empresa`) VALUES
 (1, 'RECEPÇÃO PRINCIPAL', 1),
 (2, 'RECEPÇÃO CARDIO', 2),
-(5, 'RECEPÇÃO OFTALMO', 2),
-(6, 'teste 2', 2);
+(5, 'RECEPÇÃO OFTALMO', 2);
 
 -- --------------------------------------------------------
 
@@ -223,6 +256,24 @@ INSERT INTO `usuario` (`usuario_id`, `usuario`, `usuario_senha`, `usuario_nome`,
 (1, 'afarias', 'e10adc3949ba59abbe56e057f20f883e', 'Arão Alves de Farias', '03650089319', 'arao.alves7@gmail.com', '98982468103', '1991-06-23', 1, 1, 1),
 (2, 'lol', 'e10adc3949ba59abbe56e057f20f883e', 'Usuário Teste', '57567567', 'arao.alves7@gmail.com', '345345', '2017-04-05', 2, 1, 2),
 (3, 'lolol', 'e10adc3949ba59abbe56e057f20f883e', 'lolol', '535345345', 'lolol', '34534543', '2017-04-05', 2, 2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `opinioes_empresa`
+--
+DROP TABLE IF EXISTS `opinioes_empresa`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `opinioes_empresa`  AS  select `opiniao`.`opiniao_data` AS `opiniao_data`,`opiniao`.`opiniao_empresa` AS `opiniao_empresa`,`obter_nome_empresa`(`opiniao`.`opiniao_empresa`) AS `empresa_descricao`,`obter_qtd_opiniao_empresa`(1,`opiniao`.`opiniao_data`,`opiniao`.`opiniao_empresa`) AS `opiniao_otimo`,`obter_qtd_opiniao_empresa`(2,`opiniao`.`opiniao_data`,`opiniao`.`opiniao_empresa`) AS `opiniao_bom`,`obter_qtd_opiniao_empresa`(3,`opiniao`.`opiniao_data`,`opiniao`.`opiniao_empresa`) AS `opiniao_regular`,`obter_qtd_opiniao_empresa`(4,`opiniao`.`opiniao_data`,`opiniao`.`opiniao_empresa`) AS `opiniao_ruim`,`obter_qtd_opiniao_empresa`(5,`opiniao`.`opiniao_data`,`opiniao`.`opiniao_empresa`) AS `opiniao_pessimo` from `opiniao` group by `opiniao`.`opiniao_data`,`opiniao`.`opiniao_empresa` ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `opinioes_usuario`
+--
+DROP TABLE IF EXISTS `opinioes_usuario`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `opinioes_usuario`  AS  select `opiniao`.`opiniao_data` AS `opiniao_data`,`opiniao`.`opiniao_usuario` AS `opiniao_usuario`,`obter_nome_usuario`(`opiniao`.`opiniao_usuario`) AS `usuario_descricao`,`opiniao`.`opiniao_empresa` AS `opiniao_empresa`,`obter_nome_empresa`(`opiniao`.`opiniao_empresa`) AS `empresa_descricao`,`obter_qtd_opiniao_usuario`(1,`opiniao`.`opiniao_usuario`,`opiniao`.`opiniao_data`,`opiniao`.`opiniao_empresa`) AS `opiniao_otimo`,`obter_qtd_opiniao_usuario`(2,`opiniao`.`opiniao_usuario`,`opiniao`.`opiniao_data`,`opiniao`.`opiniao_empresa`) AS `opiniao_bom`,`obter_qtd_opiniao_usuario`(3,`opiniao`.`opiniao_usuario`,`opiniao`.`opiniao_data`,`opiniao`.`opiniao_empresa`) AS `opiniao_regular`,`obter_qtd_opiniao_usuario`(4,`opiniao`.`opiniao_usuario`,`opiniao`.`opiniao_data`,`opiniao`.`opiniao_empresa`) AS `opiniao_ruim`,`obter_qtd_opiniao_usuario`(5,`opiniao`.`opiniao_usuario`,`opiniao`.`opiniao_data`,`opiniao`.`opiniao_empresa`) AS `opiniao_pessimo` from `opiniao` group by `opiniao`.`opiniao_data`,`opiniao`.`opiniao_usuario`,`opiniao`.`opiniao_empresa` ;
 
 --
 -- Indexes for dumped tables
@@ -287,7 +338,7 @@ ALTER TABLE `permissao`
 -- AUTO_INCREMENT for table `setor`
 --
 ALTER TABLE `setor`
-  MODIFY `setor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `setor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `tipo_opiniao`
 --
