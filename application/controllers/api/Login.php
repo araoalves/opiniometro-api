@@ -5,7 +5,7 @@ ini_set('allow_url_fopen',1);
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Usuario extends CI_Controller {
+class Login extends CI_Controller {
 
     public function __construct()
 	{
@@ -22,12 +22,19 @@ class Usuario extends CI_Controller {
 	}
 
     public function logar() {
-
+        $token = "e10adc3949ba59abbe56e057f20f883e";
         $inputs = $this->input->get();
 
-        $usuario = $this->login->recuperarUsuario($inputs['matricula']);
-            
-        echo json_encode($usuario);        
+        if($token == $inputs['token']){            
+            $usuario = $this->login->recuperarUsuario($inputs['usuario']);            
+            echo json_encode($usuario);
+        }else{
+            $retorno = array(
+                'erro' => "800",
+                'mensagem' => "O token não confere."
+            );
+            echo json_encode($retorno);
+        }        
     }
         
 

@@ -82,6 +82,7 @@
     <script src="<?= base_url('resources/admin/bootstrap-daterangepicker/daterangepicker.js'); ?>"></script>
     <script src="<?= base_url('resources/admin/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js'); ?>"></script>
     <script src="<?= base_url('resources/admin/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js'); ?>"></script>
+    <script src="//cdn.datatables.net/plug-ins/1.10.13/i18n/Portuguese-Brasil.json"></script>
 
   </body>
 </html>

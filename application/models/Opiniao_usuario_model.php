@@ -22,8 +22,7 @@ class Opiniao_usuario_model extends CI_Model
 					LIMIT 100";
 		}else{
             $sql = "SELECT * FROM opinioes_usuario
-                    WHERE opiniao_empresa = ".$this->session->empresa."
-					ORDER BY opiniao_data DESC LIMIT 100";                                                       
+                    WHERE opiniao_empresa = ".$this->session->empresa." ORDER BY opiniao_data DESC LIMIT 100";                                                       
 		}
 
 		$consulta = $this->db->query($sql);
