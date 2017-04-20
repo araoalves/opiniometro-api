@@ -1,9 +1,8 @@
 <?php
 
-ini_set('allow_url_fopen',1);
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+include_once APPPATH.'/models/Dominio/Usuario.php';
 
 class Login extends CI_Controller {
 
@@ -19,6 +18,7 @@ class Login extends CI_Controller {
 
 		parent::__construct();
         $this->load->model('login_model','login');
+        $this->usuario = new Dominio\Usuario();
 	}
 
     public function logar() {
@@ -26,8 +26,8 @@ class Login extends CI_Controller {
         $inputs = $this->input->post();
 
         if($token == $inputs['token']){            
-            $usuario = $this->login->recuperarUsuario($inputs['user']);            
-            echo json_encode($usuario);
+            $user = $this->login->recuperarUsuario($inputs['user']);   
+            echo json_encode((object) $user);
         }else{
             $retorno = array(
                 'erro' => "800",
