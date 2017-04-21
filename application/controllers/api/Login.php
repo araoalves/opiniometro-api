@@ -16,6 +16,8 @@ class Login extends CI_Controller {
                 die();
         }
 
+        //Git teste
+
 		parent::__construct();
         $this->load->model('login_model','login');
         $this->usuario = new Dominio\Usuario();
