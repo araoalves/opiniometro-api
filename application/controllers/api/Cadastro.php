@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+class Cadastro extends CI_Controller {
 
     public function __construct()
 	{
@@ -15,23 +15,36 @@ class Login extends CI_Controller {
         }
 
 		parent::__construct();
-        $this->load->model('login_model','login');
+        $this->load->model('cadastro_model','cadastro');
 	}
 
-    public function index() {
+    public function cadastrarOpiniao() {
         $token = "e10adc3949ba59abbe56e057f20f883e";
         $inputs = $this->input->post();
 
-        if($token == $inputs['token']){            
-            $user = $this->login->recuperarUsuario($inputs['user']);   
-            echo json_encode((object) $user);
+        $data_atual = date ("Y-m-d");
+
+        if($token == $inputs['token']){ 
+
+             $opiniao = array(
+                'opiniao_data' => $data_atual,
+                'opiniao_usuario' => $inputs['opiniao_usuario'],
+                'opiniao_tipo' => $inputs['opiniao_tipo'],
+                'opiniao_empresa' => $inputs['opiniao_empresa']                
+             );
+
+             $status = $this->cadastro->cadastrarOpiniao($opiniao);
+
+              echo json_encode((object) $status);
+            
         }else{
-            $retorno = array(
+             $retorno = array(
                 'erro' => "800",
                 'mensagem' => "O token não confere."
             );
             echo json_encode($retorno);
-        }        
+        }
+       
     }
         
 
