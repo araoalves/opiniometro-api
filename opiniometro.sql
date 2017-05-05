@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 12-Abr-2017 às 14:19
--- Versão do servidor: 10.1.16-MariaDB
--- PHP Version: 5.6.24
+-- Generation Time: 05-Maio-2017 às 19:53
+-- Versão do servidor: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -129,12 +129,15 @@ INSERT INTO `opiniao` (`opiniao_id`, `opiniao_data`, `opiniao_usuario`, `opiniao
 (10, '2017-04-07', 2, 4, 1),
 (11, '2017-04-07', 2, 4, 1),
 (12, '2017-04-07', 1, 1, 1),
-(13, '2017-04-07', 1, 2, 2);
+(13, '2017-04-07', 1, 2, 2),
+(14, '2017-04-19', 1, 1, 1),
+(15, '2017-04-25', 1, 2, 1);
 
 -- --------------------------------------------------------
 
 --
 -- Stand-in structure for view `opinioes_empresa`
+-- (See below for the actual view)
 --
 CREATE TABLE `opinioes_empresa` (
 `opiniao_data` date
@@ -151,6 +154,7 @@ CREATE TABLE `opinioes_empresa` (
 
 --
 -- Stand-in structure for view `opinioes_usuario`
+-- (See below for the actual view)
 --
 CREATE TABLE `opinioes_usuario` (
 `opiniao_data` date
@@ -289,7 +293,10 @@ ALTER TABLE `empresa`
 -- Indexes for table `opiniao`
 --
 ALTER TABLE `opiniao`
-  ADD PRIMARY KEY (`opiniao_id`);
+  ADD PRIMARY KEY (`opiniao_id`),
+  ADD KEY `opiniao_usuario` (`opiniao_usuario`),
+  ADD KEY `opiniao_tipo` (`opiniao_tipo`),
+  ADD KEY `opiniao_empresa` (`opiniao_empresa`);
 
 --
 -- Indexes for table `permissao`
@@ -301,7 +308,8 @@ ALTER TABLE `permissao`
 -- Indexes for table `setor`
 --
 ALTER TABLE `setor`
-  ADD PRIMARY KEY (`setor_id`);
+  ADD PRIMARY KEY (`setor_id`),
+  ADD KEY `setor_empresa` (`setor_empresa`);
 
 --
 -- Indexes for table `tipo_opiniao`
@@ -313,7 +321,10 @@ ALTER TABLE `tipo_opiniao`
 -- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`usuario_id`);
+  ADD PRIMARY KEY (`usuario_id`),
+  ADD KEY `usuario_permissao` (`usuario_permissao`),
+  ADD KEY `usuario_empresa` (`usuario_empresa`),
+  ADD KEY `usuario_setor` (`usuario_setor`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -328,7 +339,7 @@ ALTER TABLE `empresa`
 -- AUTO_INCREMENT for table `opiniao`
 --
 ALTER TABLE `opiniao`
-  MODIFY `opiniao_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `opiniao_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `permissao`
 --
@@ -338,7 +349,7 @@ ALTER TABLE `permissao`
 -- AUTO_INCREMENT for table `setor`
 --
 ALTER TABLE `setor`
-  MODIFY `setor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `setor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tipo_opiniao`
 --
@@ -349,6 +360,32 @@ ALTER TABLE `tipo_opiniao`
 --
 ALTER TABLE `usuario`
   MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Limitadores para a tabela `opiniao`
+--
+ALTER TABLE `opiniao`
+  ADD CONSTRAINT `opiniao_empresa` FOREIGN KEY (`opiniao_empresa`) REFERENCES `empresa` (`empresa_id`),
+  ADD CONSTRAINT `opiniao_tipo` FOREIGN KEY (`opiniao_tipo`) REFERENCES `tipo_opiniao` (`tipo_opiniao_id`),
+  ADD CONSTRAINT `opiniao_usuario` FOREIGN KEY (`opiniao_usuario`) REFERENCES `usuario` (`usuario_id`);
+
+--
+-- Limitadores para a tabela `setor`
+--
+ALTER TABLE `setor`
+  ADD CONSTRAINT `setor_empresa` FOREIGN KEY (`setor_empresa`) REFERENCES `empresa` (`empresa_id`);
+
+--
+-- Limitadores para a tabela `usuario`
+--
+ALTER TABLE `usuario`
+  ADD CONSTRAINT `usuario_empresa` FOREIGN KEY (`usuario_empresa`) REFERENCES `empresa` (`empresa_id`),
+  ADD CONSTRAINT `usuario_permissao` FOREIGN KEY (`usuario_permissao`) REFERENCES `permissao` (`permissao_id`),
+  ADD CONSTRAINT `usuario_setor` FOREIGN KEY (`usuario_setor`) REFERENCES `setor` (`setor_id`);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
