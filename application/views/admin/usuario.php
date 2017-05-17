@@ -39,13 +39,13 @@
                   <?php endif; ?>
 
                     <br />
-                    <form action="<?= base_url('admin/financiamento/cadastrarFinanciamento');?>" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="post">
+                    <form action="<?= base_url('admin/usuario/cadastrarUsuario');?>" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="post">
                     
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Informe o Usuário: <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="vt52desfin" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="usuario" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                         
@@ -53,7 +53,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Informe o Nome: <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="vt52perdsc" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="nome" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
@@ -61,7 +61,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Informe o CPF: <span class="required">*</span>
                         </label>
                         <div class="col-md-3 col-sm-3 col-xs-6">
-                          <input type="text" name="vt52perdsc" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="cpf" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
@@ -69,7 +69,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Informe uma Senha: <span class="required">*</span>
                         </label>
                         <div class="col-md-3 col-sm-3 col-xs-6">
-                          <input type="text" name="vt52perdsc" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="senha" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
@@ -77,7 +77,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Informe o E-mail: <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="email" name="vt52perdsc" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="email" name="email" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
@@ -85,7 +85,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Informe o Telefone: <span class="required">*</span>
                         </label>
                         <div class="col-md-3 col-sm-3 col-xs-6">
-                          <input type="text" name="vt52perdsc" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="telefone" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
@@ -93,7 +93,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Informe a data de nascimento: <span class="required">*</span>
                         </label>
                         <div class="col-md-2 col-sm-2 col-xs-6">
-                          <input type="date" name="vt52perdsc" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="date" name="data_nascimento" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 
@@ -101,23 +101,54 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Selecione a Permissão: <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select id="select_vestibular" name="select_vestibular" class="select2_single form-control" tabindex="-1" required="required">
-                              
+                          <select id="select_permissao" name="select_permissao" class="select2_single form-control" tabindex="-1" required="required">
+                              <?php foreach ($listPermissoes as $permissao):?>																		                               
+                                 <option value="<?= $permissao->permissao_id?>"><?= $permissao->permissao_id?>   -   <?= $permissao->permissao_descricao?></option>										
+						                  <?php endforeach; ?>  
                           </select>
                         </div>
                       </div>
 
-                      <input type="hidden" id="cod_empresa" name="cod_empresa" value="<?= $this->session->empresa; ?>">
+                       <?php if ($this->session->permissao == "2"): ?> 
+                          <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Selecione o Setor: <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <select id="select_setor" name="select_setor" class="select2_single form-control" tabindex="-1" required="required">
+                                  <?php foreach ($listSetorEmpresa as $setor):?>																		                               
+                                    <option value="<?= $setor->setor_id?>"><?= $setor->setor_id?>   -   <?= $setor->setor_descricao?></option>										
+                                  <?php endforeach; ?>  
+                              </select>
+                            </div>
+                          </div> 
+                        <?php endif; ?>
 
-                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Selecione o Setor: <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select id="select_vestibular" name="select_vestibular" class="select2_single form-control" tabindex="-1" required="required">
-                              
-                          </select>
+                      <?php if ($this->session->permissao == "1"): ?>  
+
+                         <div class="form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Selecione o Setor: <span class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <select id="select_setor" name="select_setor" class="select2_single form-control" tabindex="-1" required="required">
+                                <?php foreach ($listAllSetorEmpresa as $setor):?>																		                               
+                                  <option value="<?= $setor->setor_id?>"><?= $setor->setor_id?>   -   <?= $setor->setor_descricao?></option>										
+                                <?php endforeach; ?>  
+                            </select>
+                          </div>
                         </div>
-                      </div>
+
+                          <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Selecione a Empresa: <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <select id="empresa" name="empresa" class="select2_single form-control" tabindex="-1" required="required">
+                                  <?php foreach ($listEmpresas as $empresa):?>																		                               
+                                    <option value="<?= $empresa->empresa_id?>"><?= $empresa->empresa_id?>   -   <?= $empresa->empresa_razao_social?></option>										
+                                  <?php endforeach; ?>  
+                              </select>
+                            </div>
+                          </div>
+                       <?php endif; ?>
 
                       <div class="ln_solid"></div>
                       <div class="form-group">

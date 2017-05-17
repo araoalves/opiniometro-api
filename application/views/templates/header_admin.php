@@ -99,7 +99,7 @@
                     <li><a><i class="fa fa-edit"></i> Administrativo <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">                    
                             <li><a href="<?= base_url('admin/usuario');?>">Cadastro de Usuários</a></li>   
-                            <li><a href="<?= base_url('admin/usuario');?>">Cadastro de Empresas</a></li>
+                            <li><a href="<?= base_url('admin/empresa');?>">Cadastro de Empresas</a></li>
                             <li><a href="<?= base_url('admin/permissao');?>">Cadastro de Permissões</a></li> 
                             <li><a href="<?= base_url('admin/setores');?>">Cadastro de Setores</a></li>                                                                                                
                         </ul>

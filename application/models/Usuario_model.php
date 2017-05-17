@@ -6,7 +6,7 @@
 class Usuario_model extends CI_Model
 {
 
-  private $table = "";
+  private $table = "usuario";
 
   public function __construct()
 	{
@@ -30,6 +30,36 @@ class Usuario_model extends CI_Model
 		$consulta = $this->db->query($sql);
 		return $consulta->result();
 	}
+
+	public function recuperarListPermissoes(){
+		$sql = "SELECT * FROM permissao WHERE permissao_id != 1";
+		$consulta = $this->db->query($sql);
+		return $consulta->result();
+	}
+
+	public function recuperarListSetorEmpresa(){
+		$sql = "SELECT * FROM setor WHERE setor_empresa = ".$this->session->empresa;
+		$consulta = $this->db->query($sql);
+		return $consulta->result();
+	}
+
+	public function recuperarListAllSetorEmpresa(){
+		$sql = "SELECT * FROM setor";
+		$consulta = $this->db->query($sql);
+		return $consulta->result();
+	}
+
+	public function recuperarListEmpresas(){
+		$sql = "SELECT * FROM empresa";
+		$consulta = $this->db->query($sql);
+		return $consulta->result();
+	}
+
+	public function Inserir($data) {
+		if(!isset($data))
+			return false;
+		return $this->db->insert($this->table, $data);
+  	}
 
 
 }
