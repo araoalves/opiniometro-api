@@ -32,7 +32,7 @@ class Usuario extends CI_Controller {
 
     }
 
-        function cadastrarUsuario(){
+    function cadastrarUsuario(){
          if(!$this->session->userdata('usuario')){
             $this->session->set_flashdata('error', 'Você precisa estar logado para acessar a área administrativa.');
             redirect('admin/home');
@@ -65,6 +65,39 @@ class Usuario extends CI_Controller {
                 $this->session->set_flashdata('error', 'Não foi possível inserir o usuário.');
                 redirect('admin/usuario');
             }             
+    }
+
+    function recuperarSetoresEmpresa(){
+        if(!$this->session->userdata('usuario')){
+            $this->session->set_flashdata('error', 'Você precisa estar logado para acessar a área administrativa.');
+            redirect('admin/home');
+        }
+
+        $dados = $this->input->post();
+
+        echo json_encode($this->usuario->recuperarSetoresPorEmpresa($dados['codEmpresa'])); 
+    }
+
+    function removerUsuario(){
+         if(!$this->session->userdata('usuario')){
+            $this->session->set_flashdata('error', 'Você precisa estar logado para acessar a área administrativa.');
+            redirect('admin/home');
+        }
+
+         $id = $this->input->post();
+
+         if(is_null($id))
+			redirect('admin/home');
+        
+        $status = $this->usuario->Excluir($id['id']);
+		// Checa o status da operação gravando a mensagem na seção
+		if($status){
+			$this->session->set_flashdata('exclusao_sucesso', 'Usuário Removido com sucesso.');
+           redirect('admin/usuario');
+		}else{
+			$this->session->set_flashdata('exclusao_error', 'Não foi possível excluir o Usuário.');
+            redirect('admin/usuario'); 
+		}
     }
 
 }

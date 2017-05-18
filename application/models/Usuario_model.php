@@ -61,5 +61,19 @@ class Usuario_model extends CI_Model
 		return $this->db->insert($this->table, $data);
   	}
 
+	public function recuperarSetoresPorEmpresa($idEmpresa){
+		$sql = "SELECT * FROM setor WHERE setor_empresa = ".$idEmpresa;
+		$consulta = $this->db->query($sql);
+		return $consulta->result();
+	}
+
+	function Excluir($id) {
+		if(is_null($id))
+		return false;
+
+		$this->db->where('usuario_id', $id);
+		return $this->db->delete($this->table);
+    }
+
 
 }
