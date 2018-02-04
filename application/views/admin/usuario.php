@@ -18,28 +18,28 @@
                   </div>
                   <div class="x_content">
 
-                  <?php if ($this->session->flashdata('cadastro_sucesso') == TRUE): ?>                    
+                  <?php if ($this->session->flashdata('cadastro_sucesso') == TRUE) : ?>                    
                     <?php 
-                        $div = '<div class="alert alert-success alert-dismissible fade in" role="alert">
+                    $div = '<div class="alert alert-success alert-dismissible fade in" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                         </button>
-                        <strong>'.$this->session->flashdata('cadastro_sucesso').'</div>';                        
-                        echo $div;
+                        <strong>' . $this->session->flashdata('cadastro_sucesso') . '</div>';
+                    echo $div;
                     ?>                   
                   <?php endif; ?>
 
-                   <?php if ($this->session->flashdata('error') == TRUE): ?>                    
+                   <?php if ($this->session->flashdata('error') == TRUE) : ?>                    
                     <?php 
-                        $div = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
+                    $div = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                         </button>
-                        <strong>'.$this->session->flashdata('error').'</div>';                        
-                        echo $div;
+                        <strong>' . $this->session->flashdata('error') . '</div>';
+                    echo $div;
                     ?>                   
                   <?php endif; ?>
 
                     <br />
-                    <form action="<?= base_url('admin/usuario/cadastrarUsuario');?>" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="post">
+                    <form action="<?= base_url('admin/usuario/cadastrarUsuario'); ?>" data-parsley-validate class="form-horizontal form-label-left" method="post">
                     
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Informe o Usuário: <span class="required">*</span>
@@ -102,28 +102,28 @@
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <select id="select_permissao" name="select_permissao" class="select2_single form-control" tabindex="-1" required="required">
-                              <?php foreach ($listPermissoes as $permissao):?>																		                               
-                                 <option value="<?= $permissao->permissao_id?>"><?= $permissao->permissao_id?>   -   <?= $permissao->permissao_descricao?></option>										
+                              <?php foreach ($listPermissoes as $permissao) : ?>																		                               
+                                 <option value="<?= $permissao->permissao_id ?>"><?= $permissao->permissao_id ?>   -   <?= $permissao->permissao_descricao ?></option>										
 						                  <?php endforeach; ?>  
                           </select>
                         </div>
                       </div>
 
-                       <?php if ($this->session->permissao == "2"): ?> 
+                       <?php if ($this->session->permissao == "2") : ?> 
                           <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Selecione o Setor: <span class="required">*</span>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                               <select id="select_setor" name="select_setor" class="select2_single form-control" tabindex="-1" required="required">
-                                  <?php foreach ($listSetorEmpresa as $setor):?>																		                               
-                                    <option value="<?= $setor->setor_id?>"><?= $setor->setor_id?>   -   <?= $setor->setor_descricao?></option>										
+                                  <?php foreach ($listSetorEmpresa as $setor) : ?>																		                               
+                                    <option value="<?= $setor->setor_id ?>"><?= $setor->setor_id ?>   -   <?= $setor->setor_descricao ?></option>										
                                   <?php endforeach; ?>  
                               </select>
                             </div>
                           </div> 
                         <?php endif; ?>
 
-                      <?php if ($this->session->permissao == "1"): ?>  
+                      <?php if ($this->session->permissao == "1") : ?>  
 
                         <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Selecione a Empresa: <span class="required">*</span>
@@ -131,8 +131,8 @@
                             <div class="col-md-6 col-sm-6 col-xs-12">
                               <select id="empresa" name="empresa" class="select2_single form-control" tabindex="-1" required="required">
                                   <option>Escolha a Empresa</option>          
-                                  <?php foreach ($listEmpresas as $empresa):?>																		                               
-                                    <option value="<?= $empresa->empresa_id?>"><?= $empresa->empresa_id?>   -   <?= $empresa->empresa_razao_social?></option>										
+                                  <?php foreach ($listEmpresas as $empresa) : ?>																		                               
+                                    <option value="<?= $empresa->empresa_id ?>"><?= $empresa->empresa_id ?>   -   <?= $empresa->empresa_razao_social ?></option>										
                                   <?php endforeach; ?>  
                               </select>
                             </div>
@@ -169,36 +169,119 @@
                         <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                           </button>
-                          <h4 class="modal-title" id="myModalLabel">Editar Financiamento</h4>
+                          <h4 class="modal-title" id="myModalLabel">Editar Usuário</h4>
                         </div><br><br>
                         
-                         <form action="<?= base_url('admin/financiamento/editarFinanciamento');?>" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="post">                    
-                                <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ID: <span class="required">*</span>
-                                    </label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="hidden" id="id_hidden" name="id_hidden">
-                                    <input type="text" id="id" name="vt52codigo" required="required" class="form-control col-md-7 col-xs-12" disabled="true">                                    
-                                    </div>
-                                </div>
+                         <form action="<?= base_url('admin/usuario/editarUsuario'); ?>" data-parsley-validate class="form-horizontal form-label-left" method="post">                    
 
-                                <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Informe a descrição do financiamento: <span class="required">*</span>
-                                    </label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="hidden" id="descricao_hidden" name="descricao_hidden">
-                                    <input type="text" id="descricao" name="vt52desfin" required="required" class="form-control col-md-7 col-xs-12">
-                                    </div>
-                                </div>                              
-                                    
-                                <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Informe a porcentagem do financiamento: <span class="required">*</span>
-                                    </label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="hidden" id="percentual_hidden" name="percentual_hidden">
-                                    <input type="text" id="percentual" name="vt52perdsc" required="required" class="form-control col-md-7 col-xs-12">
-                                    </div>
-                                </div>                                
+                        <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ID Usuário: <span class="required">*</span>
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                          <input type="hidden" id="id_usuario_hidden" name="id_usuario_hidden">
+                          <input type="text" id="id_usuario_edit" name="id_usuario_edit" required="required" class="form-control col-md-7 col-xs-12" disabled="true">                                    
+                        </div>
+                      </div>
+
+                        <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Informe o Usuário: <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="usuario_edit" name="usuario_edit" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                        
+                        <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Informe o Nome: <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="nome_edit" name="nome_edit" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Informe o CPF: <span class="required">*</span>
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                          <input type="text" id="cpf_edit" name="cpf_edit" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Informe o E-mail: <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="email" id="email_edit" name="email_edit" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Informe o Telefone: <span class="required">*</span>
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                          <input type="text" id="telefone_edit" name="telefone_edit" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Informe a data de nascimento: <span class="required">*</span>
+                        </label>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                          <input type="date" id="data_nascimento_edit" name="data_nascimento_edit" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Selecione a Permissão: <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select id="select_permissao_edit" name="select_permissao_edit" class="select2_single form-control" tabindex="-1" required="required">
+                              <?php foreach ($listPermissoes as $permissao) : ?>																		                               
+                                 <option value="<?= $permissao->permissao_id ?>"><?= $permissao->permissao_id ?>   -   <?= $permissao->permissao_descricao ?></option>										
+						                  <?php endforeach; ?>  
+                          </select>
+                        </div>
+                      </div>
+
+                       <?php if ($this->session->permissao == "2") : ?> 
+                          <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Selecione o Setor: <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <select id="select_setor_edit" name="select_setor_edit" class="select2_single form-control" tabindex="-1" required="required">
+                                  <?php foreach ($listSetorEmpresa as $setor) : ?>																		                               
+                                    <option value="<?= $setor->setor_id ?>"><?= $setor->setor_id ?>   -   <?= $setor->setor_descricao ?></option>										
+                                  <?php endforeach; ?>  
+                              </select>
+                            </div>
+                          </div> 
+                        <?php endif; ?>
+
+                      <?php if ($this->session->permissao == "1") : ?>  
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Selecione a Empresa: <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <select id="empresa_edit" name="empresa_edit" class="select2_single form-control" tabindex="-1" required="required">
+                                  <option>Escolha a Empresa</option>          
+                                  <?php foreach ($listEmpresas as $empresa) : ?>																		                               
+                                    <option value="<?= $empresa->empresa_id ?>"><?= $empresa->empresa_id ?>   -   <?= $empresa->empresa_razao_social ?></option>										
+                                  <?php endforeach; ?>  
+                              </select>
+                            </div>
+                          </div>
+
+                         <div class="form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Selecione o Setor: <span class="required">*</span>
+                          </label>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <select id="select_setor_edit" name="select_setor_edit" class="select2_single form-control" tabindex="-1" required="required"> 
+                            </select>
+                          </div>
+                        </div>
+            
+                       <?php endif; ?>                        
 
                                 <div class="ln_solid"></div>
                                 <div class="form-group">
@@ -223,7 +306,7 @@
                           <h4 class="modal-title" id="myModalLabel">Alterar Senha</h4>
                         </div><br><br>
                         
-                         <form action="<?= base_url('admin/financiamento/editarFinanciamento');?>" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="post">                    
+                         <form action="<?= base_url('admin/usuario/editarSenhaUsuario'); ?>"  data-parsley-validate class="form-horizontal form-label-left" method="post">                    
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ID: <span class="required">*</span>
                                     </label>
@@ -237,12 +320,13 @@
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Usuário: <span class="required">*</span>
                                     </label>
                                     <div class="col-md-3 col-sm-3 col-xs-12">
+                                    <input type="hidden" id="usuario_edit_senha_hidden" name="usuario_edit_senha_hidden">
                                     <input type="text" id="usuario_edit_senha" name="usuario_edit_senha" required="required" class="form-control col-md-7 col-xs-12" disabled="true">
                                     </div>
                                 </div>                              
                                     
                                 <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Senha: <span class="required">*</span>
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nova Senha: <span class="required">*</span>
                                     </label>
                                     <div class="col-md-3 col-sm-3 col-xs-12">                                    
                                         <input type="password" id="senha_edit" name="senha_edit" required="required" class="form-control col-md-7 col-xs-12">
@@ -287,23 +371,23 @@
                     <p class="text-muted font-13 m-b-30">                      
                     </p>
 
-                   <?php if ($this->session->flashdata('exclusao_sucesso') == TRUE): ?>                    
+                   <?php if ($this->session->flashdata('exclusao_sucesso') == TRUE) : ?>                    
                     <?php 
-                        $div = '<div class="alert alert-success alert-dismissible fade in" role="alert">
+                    $div = '<div class="alert alert-success alert-dismissible fade in" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                         </button>
-                        <strong>'.$this->session->flashdata('exclusao_sucesso').'</div>';                        
-                        echo $div;
+                        <strong>' . $this->session->flashdata('exclusao_sucesso') . '</div>';
+                    echo $div;
                     ?>                   
                   <?php endif; ?>
 
-                    <?php if ($this->session->flashdata('exclusao_error') == TRUE): ?>                    
+                    <?php if ($this->session->flashdata('exclusao_error') == TRUE) : ?>                    
                     <?php 
-                        $div = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
+                    $div = '<div class="alert alert-danger alert-dismissible fade in" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
                         </button>
-                        <strong>'.$this->session->flashdata('exclusao_error').'</div>';                        
-                        echo $div;
+                        <strong>' . $this->session->flashdata('exclusao_error') . '</div>';
+                    echo $div;
                     ?>                   
                   <?php endif; ?>
 
@@ -326,29 +410,37 @@
                         </tr>
                       </thead>
                         <tbody>
-                         	<?php foreach ($listUsuarios as $usuario):?>								
+                         	<?php foreach ($listUsuarios as $usuario) : ?>								
 									<tr>
-									  <td><?= $usuario->usuario_id?></td>
-									  <td><?= $usuario->usuario?></td>
-									  <td><?= $usuario->usuario_nome?></td>
-                                      <td><?= $usuario->usuario_cpf?></td>
-                                      <td><?= $usuario->usuario_email?></td>
-                                      <td><?= $usuario->usuario_telefone?></td>
+									  <td><?= $usuario->usuario_id ?></td>
+									  <td><?= $usuario->usuario ?></td>
+									  <td><?= $usuario->usuario_nome ?></td>
+                                      <td><?= $usuario->usuario_cpf ?></td>
+                                      <td><?= $usuario->usuario_email ?></td>
+                                      <td><?= $usuario->usuario_telefone ?></td>
                                      
-                                      <td><?= date('d/m/Y', strtotime($usuario->usuario_dt_nasc));?></td>
-                                      <td><?= $usuario->permissao_descricao?></td>
-                                      <td><?= $usuario->setor_descricao?></td>
-                                      <td><?= $usuario->empresa_descricao?></td>
+                                      <td><?= date('d/m/Y', strtotime($usuario->usuario_dt_nasc)); ?></td>
+                                      <td><?= $usuario->permissao_descricao ?></td>
+                                      <td><?= $usuario->setor_descricao ?></td>
+                                      <td><?= $usuario->empresa_descricao ?></td>
                                       <td>
                                             <button id="editar_senha" type="submit" class="btn btn-warning" data-toggle="modal" data-target=".bs-editsenha-modal-lg"
-                                            data-id-usuario="<?= $usuario->usuario_id?>" data-usuario="<?= $usuario->usuario?>">Alterar Senha</button>                                                                                                     
+                                            data-id-usuario="<?= $usuario->usuario_id ?>" data-usuario="<?= $usuario->usuario ?>">Alterar Senha</button>                                                                                                     
                                       </td>
                                       <td>
-                                            <button id="editar" type="submit" class="btn btn-warning" data-toggle="modal" data-target=".bs-edit-modal-lg">Editar</button>                                                                                                 
+                                            <button id="editar_user" type="submit" class="btn btn-warning" data-toggle="modal" data-target=".bs-edit-modal-lg"
+                                            data-id-usuario-edit="<?= $usuario->usuario_id ?>" 
+                                            data-usuario="<?= $usuario->usuario ?>"
+                                            data-nome="<?= $usuario->usuario_nome ?>"
+                                            data-cpf="<?= $usuario->usuario_cpf ?>"
+                                            data-email="<?= $usuario->usuario_email ?>"
+                                            data-telefone="<?= $usuario->usuario_telefone ?>"
+                                            data-data-nascimento="<?= $usuario->usuario_dt_nasc ?>"
+                                            >Editar</button>                                                                                                 
                                       </td>
                                       <td>
-                                            <form action="<?= base_url('admin/usuario/removerUsuario');?>" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="post">                                                                    
-                                                <input type="hidden" name="id" value="<?=$usuario->usuario_id?>">                                                                                           
+                                            <form action="<?= base_url('admin/usuario/removerUsuario'); ?>" data-parsley-validate class="form-horizontal form-label-left" method="post">                                                                    
+                                                <input type="hidden" name="id" value="<?= $usuario->usuario_id ?>">                                                                                           
                                                 <button type="submit" class="btn btn-danger" onClick="return confirm('Deseja Remover?');">Remover</button>                                                                                                   
                                             </form>
                                       </td>
@@ -359,18 +451,32 @@
                     </table>
                   </div>
                 </div>
-              </div>
-
-         <div class="col-lg-12">
-            <h1> Informações importantes:</h1>                
-              <h2> No momento de cadastrar, tenha atenção. Não deixe campus vazios ou qualquer informação pela metade.</h2>                      
-         </div>                              
+              </div>                              
             </div>
           </div>
        </div>
 </div>
 
 <script>
+
+$(document).on('click', '#editar_senha', function() {
+    $('#hidden_edit_senha').val($(this).attr("data-id-usuario"));
+    $('#id_edit_senha').val($(this).attr("data-id-usuario"));
+    $('#usuario_edit_senha').val($(this).attr("data-usuario"));
+    $('#usuario_edit_senha_hidden').val($(this).attr("data-usuario"));
+});
+
+
+$(document).on('click', '#editar_user', function() {
+    $('#id_usuario_hidden').val($(this).attr("data-id-usuario-edit"));
+    $('#id_usuario_edit').val($(this).attr("data-id-usuario-edit"));
+    $('#usuario_edit').val($(this).attr("data-usuario"));
+    $('#nome_edit').val($(this).attr("data-nome"));
+    $('#cpf_edit').val($(this).attr("data-cpf"));
+    $('#email_edit').val($(this).attr("data-email"));
+    $('#telefone_edit').val($(this).attr("data-telefone"));
+    $('#data_nascimento_edit').val($(this).attr("data-data-nascimento"));
+})
 
 $("#empresa").change(function() { 
     var valores = $('#empresa option:selected').val().split("#");
@@ -399,12 +505,7 @@ $("#empresa").change(function() {
             },
 
 })
-
-$(document).on('click', '#editar_senha', function() {
-    $('#hidden_edit_senha').val($(this).attr("data-id-usuario"));
-    $('#id_edit_senha').val($(this).attr("data-id-usuario"));
-})
-  
 });
+
 
 </script>

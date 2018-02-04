@@ -75,5 +75,11 @@ class Usuario_model extends CI_Model
 		return $this->db->delete($this->table);
     }
 
+	function Atualizar($id, $data) {
+		if(is_null($id) || !isset($data))
+			return false;
+		$this->db->where('usuario_id', $id);
+		return $this->db->update($this->table, $data);
+   }
 
 }

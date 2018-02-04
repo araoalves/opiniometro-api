@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = 'http://www.nodeti.com.br/opiniometro/';
-$config['base_url'] = 'http://localhost:85/GIT/opiniometro';
+$config['base_url'] = 'http://localhost/BIT/opiniometro';
 
 
 /*

@@ -223,12 +223,7 @@
                     </table>
                   </div>
                 </div>
-              </div>
-
-         <div class="col-lg-12">
-            <h1> Informações importantes:</h1>                
-              <h2> No momento de cadastrar tenha atenção. Não deixe campus vazios ou qualquer informação pela metade.</h2>                      
-         </div>                              
+              </div>                              
             </div>
           </div>
        </div>
